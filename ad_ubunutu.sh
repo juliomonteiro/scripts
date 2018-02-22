@@ -10,21 +10,21 @@ apt-get update
 apt-get install ssh vim resolvconf
 
 #Permissão SUDO AOS USUARIOS DO DOMINIO
-echo   %SKYLAN\\linuxadmins  ALL=(ALL) ALL >>/etc/sudoers
+echo  '%SKYLAN\\linuxadmins  ALL=(ALL) ALL' >>/etc/sudoers
 
 #Configurar o arquivo /etc/hosts
-echo	172.155.10.185 geru.local   >> /etc/hosts
-echo	172.155.10.185 ger-srv-dc-001 >> /etc/hosts
-echo	172.155.10.185 ger-srv-dc-001.geru.local >> /etc/hosts
+echo 192.168.11.111 skylan.local >> /etc/hosts
+echo 192.168.11.111 skysrv-dc-001 >> /etc/hosts
+echo 192.168.11.111 skysrv-dc-001.skylan.local >> /etc/hosts
 
 #Atualizar Resolvconf
-echo domain geru.local >> /etc/resolvconf/resolv.conf.d/base
-echo search geru.local >> /etc/resolvconf/resolv.conf.d/base
-echo	nameserver 172.155.10.185 >> /etc/resolvconf/resolv.conf.d/base
+echo domain skylan.local >> /etc/resolvconf/resolv.conf.d/base
+echo search skylan.local >> /etc/resolvconf/resolv.conf.d/base
+echo nameserver 192.168.11.111 >> /etc/resolvconf/resolv.conf.d/base
 
-echo	domain geru.local >> /etc/resolvconf/resolv.conf.d/head
-echo	search geru.local >> /etc/resolvconf/resolv.conf.d/head
-echo	nameserver 172.155.10.185 >> /etc/resolvconf/resolv.conf.d/head
+echo domain skylan.local >> /etc/resolvconf/resolv.conf.d/head
+echo search skylan.local >> /etc/resolvconf/resolv.conf.d/head
+echo nameserver 192.168.11.111 >> /etc/resolvconf/resolv.conf.d/head
 
 #Baixar PBIS:  https://github.com/BeyondTrust/pbis-open/releases/download/8.5.2/pbis-open-8.5.2.265.linux.x86_64.deb.sh
 GET_ARCH=$(getconf LONG_BIT)

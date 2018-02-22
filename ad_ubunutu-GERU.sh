@@ -11,10 +11,10 @@ apt-get update
 apt-get install ssh vim resolvconf
 
 #Permissão SUDO AOS USUARIOS DO DOMINIO
-echo   %GERU\\userlinux  ALL=(ALL) ALL >>/etc/sudoers
+echo '%GERU\\userlinux  ALL=(ALL) ALL' >> /etc/sudoers
 
 #Configurar o arquivo /etc/hosts
-echo	172.155.10.185 geru.local   >> /etc/hosts
+echo	172.155.10.185 geru.local >> /etc/hosts
 echo	172.155.10.185 ger-srv-dc-001 >> /etc/hosts
 echo	172.155.10.185 ger-srv-dc-001.geru.local >> /etc/hosts
 
