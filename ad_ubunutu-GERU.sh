@@ -42,6 +42,9 @@ chmod +x $PBIS_FILE
 ./$PBIS_FILE
 #rm -f $PBIS_FILE
 
+# Reinicar o computador 
+shutdown now -r
+
 #Ingressar equipamento no AD
 ./opt/pbis/bin/domainjoin-cli join GERU.LOCAL suporte.skylan
 		
@@ -50,9 +53,6 @@ sudo /opt/pbis/bin/config UserDomainPrefix GERU.LOCAL
 sudo /opt/pbis/bin/config AssumeDefaultDomain true
 sudo /opt/pbis/bin/update-dns
 sudo /opt/pbis/bin/ad-cache --delete-all
-
-# Reinicar o computador 
-shutdown now -r
 
 #Faça Logoff e logue com usuario de  dominio  --- caso não consiga logar execute o passo 11
 #Abra o terminal e use sudo su..  se funcionar está ok!!!
